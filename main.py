@@ -9,15 +9,15 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 
-MODEL = tf.keras.models.load_model("../model/100epochspotato.keras")
+MODEL = tf.keras.models.load_model("model/100epochspotato.keras")
 class_names = ['Bacteria', 'Fungi', 'Healthy', 'Nematode', 'Pest', 'Phytopthora', 'Virus']
 
-template = Jinja2Templates(directory='../templates')
+template = Jinja2Templates(directory='templates')
 
 app = FastAPI()
 
 
-app.mount("/static", StaticFiles(directory="../static"), name="static")
+app.mount("/static", StaticFiles(directory="/static"), name="static")
 
 @app.get("/ping")
 async def ping():
