@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Potato Leaf Disease Classification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+  <header class="page-header">
+    <h1>Potato Leaf Disease Classification</h1>
+    <p class="byline">-Yugank Dhanderiya</p>
+  </header>
+
+  <main class="card">
+
+    <section class="col col-input">
+      <h2 class="section-label">Input Source</h2>
+
+      <label class="dropzone" id="dropzone" for="fileInput">
+        <input type="file" id="fileInput" accept="image/*" hidden>
+        <div class="dropzone-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 16V4M12 4L7 9M12 4l5 5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <p class="dropzone-title">Upload leaf image</p>
+        <p class="dropzone-sub">Drag &amp; drop or click to browse</p>
+      </label>
+
+      <h2 class="section-label">Analysis Preview</h2>
+      <div class="preview" id="preview">
+        <div class="preview-empty" id="previewEmpty">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="3" y="5" width="18" height="14" rx="1.5" />
+            <circle cx="8.5" cy="10" r="1.5" />
+            <path d="M21 15l-5-5-9 9" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <p>No image uploaded</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="col col-actions">
+      <h2 class="section-label">Actions</h2>
+
+      <button class="predict-btn" id="predictBtn" type="button">
+        Predict Disease
+      </button>
+
+      <div class="readout">
+        <div class="readout-row">
+          <span class="readout-label">Class Name:</span>
+          <span class="readout-value" id="className">&mdash;</span>
+        </div>
+        <div class="readout-row">
+          <span class="readout-label">Confidence:</span>
+          <span class="readout-value" id="confidenceValue">&mdash;</span>
+        </div>
+        <div class="confidence-track">
+          <div class="confidence-fill" id="confidenceFill"></div>
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+
+  <script src="../static/script.js"></script>
+</body>
+
+</html>
